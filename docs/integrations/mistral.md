@@ -29,7 +29,7 @@ pip install "instructor[mistral]"
 
 ```python
 import os
-from mistralai import Mistral
+from mistralai.client import Mistral
 client = Mistral(api_key='your-api-key-here')
 ```
 
@@ -185,7 +185,7 @@ Instructor now supports streaming capabilities with Mistral! You can use both `c
 ```python
 from pydantic import BaseModel
 import instructor
-from mistralai import Mistral
+from mistralai.client import Mistral
 from instructor.dsl.partial import Partial
 
 class UserExtract(BaseModel):
@@ -220,7 +220,7 @@ for partial_user in model:
 ```python
 from pydantic import BaseModel
 import instructor
-from mistralai import Mistral
+from mistralai.client import Mistral
 
 class UserExtract(BaseModel):
     name: str
@@ -255,7 +255,7 @@ You can also use async versions of both streaming approaches:
 import asyncio
 from pydantic import BaseModel
 import instructor
-from mistralai import Mistral
+from mistralai.client import Mistral
 from instructor.dsl.partial import Partial
 
 class UserExtract(BaseModel):
@@ -314,7 +314,7 @@ Instructor makes it easy to analyse and extract semantic information from PDFs u
 from instructor.processing.multimodal import PDF
 from pydantic import BaseModel
 import instructor
-from mistralai import Mistral
+from mistralai.client import Mistral
 import os
 
 

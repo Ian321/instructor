@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 
-from mistralai import Mistral
+from mistralai.client import Mistral
 import instructor
 from typing import overload, Any, Literal
 
