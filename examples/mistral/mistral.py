@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from mistralai.client import MistralClient
+from mistralai.client import Mistral
 from instructor import from_mistral
 from instructor.mode import Mode
 import os
@@ -11,11 +11,11 @@ class UserDetails(BaseModel):
 
 
 # enables `response_model` in chat call
-client = MistralClient(api_key=os.environ.get("MISTRAL_API_KEY"))
+client = Mistral(api_key=os.environ.get("MISTRAL_API_KEY"))
 instructor_client = from_mistral(
     client=client,
     model="mistral-large-latest",
-    mode=Mode.TOOLS,
+    mode=Mode.MISTRAL_TOOLS,
     max_tokens=1000,
 )
 

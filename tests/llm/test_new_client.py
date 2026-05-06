@@ -357,7 +357,7 @@ def test_client_from_mistral_with_response():
     import mistralai.client as mistralaicli
 
     client = instructor.from_mistral(
-        mistralaicli.MistralClient(),
+        mistralaicli.Mistral(api_key=os.environ.get("MISTRAL_API_KEY")),
         max_tokens=1000,
         model="mistral-large-latest",
     )
@@ -375,7 +375,7 @@ def test_client_from_mistral_with_response():
 def test_client_mistral_response():
     import mistralai.client as mistralaicli
 
-    client = mistralaicli.MistralClient()
+    client = mistralaicli.Mistral(api_key=os.environ.get("MISTRAL_API_KEY"))
     instructor_client = instructor.from_mistral(
         client, max_tokens=1000, model="mistral-large-latest"
     )

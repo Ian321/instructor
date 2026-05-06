@@ -30,7 +30,7 @@ pip install "instructor[mistral]"
 ```python
 import os
 from mistralai.client import Mistral
-client = Mistral(api_key='your-api-key-here')
+client = Mistral(api_key="your-api-key-here")
 ```
 
 ## Available Modes

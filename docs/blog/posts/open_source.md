@@ -232,10 +232,10 @@ For those interested in exploring the capabilities of Mistral Large with Instruc
 ```python
 import instructor
 from pydantic import BaseModel
-from mistralai.client import MistralClient
+from mistralai.client import Mistral
 
 
-client = MistralClient()
+client = Mistral(api_key="your-api-key-here")
 
 patched_chat = instructor.from_openai(
     create=client.chat, mode=instructor.Mode.TOOLS
